@@ -1,0 +1,1 @@
+{"configMap":{"key":"value","name":"roy","age":18,"realAge":26.5,"single":true,"workTimePerDay":57600000,"friendNames":["abed","annie","sheldon"]},"configArray":[{"name":"roy","age":18,"realAge":26.5,"single":true,"friends":["abed","annie","sheldon"]},{"name":"rookie","age":18,"realAge":18.5,"single":false,"friends":["uzi","theshy","faker"]}]}
