@@ -69,6 +69,9 @@ function parseMap(worksheet) {
     var value;
     var type;
     worksheet.eachRow(function(row, rowNumber) {
+        if (rowNumber <= 1) {
+            return;
+        }
         key = row.getCell(1).value;
         value = row.getCell(2).value;
         type = row.getCell(3).value;
@@ -92,7 +95,10 @@ function parseArray(worksheet) {
     var keys = [];
     worksheet.getRow(1).eachCell(function(cell, cellNumber) {
         var key;
-        key = cell.value.trim();
+        key = cell.value;
+        if (key.trim) {
+            key = key.trim();
+        }
         if (!key) {
             throw new Error('worksheet: ' + worksheet.name + ' key is empty!');
         }
@@ -103,6 +109,9 @@ function parseArray(worksheet) {
     worksheet.getRow(2).eachCell(function(cell, cellNumber) {
         var type;
         type = cell.value.trim();
+        if (type.trim) {
+            type = type.trim();
+        }
         if (!type) {
             throw new Error('worksheet: ' + worksheet.name + ' type is empty!');
         }
@@ -140,11 +149,11 @@ function parseValue(value, type) {
     if(value == 'null') return null;
     switch(type) {
       case 'int':
-        return value ? parseInt(value) : undefined;
+        return parseInt(value);
       case 'num':
       case 'float':
       case 'number':
-        return value ? Number(value) : undefined;
+        return Number(value);
       case 'time':
         if(!value) return undefined;
         var m = /(-?)(?:(\d+)d)?(?:(\d+)h)?(?:(\d+)m)?(?:(\d+\.?\d*)s?)?/i.exec(value);

@@ -19,7 +19,14 @@ function parse(filePath, outputDir, options) {
         var fileNames = fs.readdirSync(filePath);
         var filePaths = [];
         fileNames.forEach(function(fileName) {
-            names.push(fileName.split('.')[0]);
+            var info = fileName.split('.');
+            if (info[1] !== 'xlsx') {
+                return;
+            }
+            if (fileName.indexOf('~') === 0) {
+                return;
+            }
+            names.push(info[0]);
             filePaths.push(path.join(filePath, fileName));
         })
         parseExcels(filePaths, function(err, datas) {
@@ -38,7 +45,6 @@ function parse(filePath, outputDir, options) {
                     render(path.join(outputDir, name + '.json'), jsonData);
                 })
             }
-            console.log('||||||||||||||||||||', err, datas);
         })
     } else {
         parseExcel(filePath, function(err, jsonData) {
