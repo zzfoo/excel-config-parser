@@ -1,7 +1,6 @@
 {
   "name": "excel-config-parser",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "directories": {
     "example": "example"
@@ -16,5 +15,14 @@
   },
   "dependencies": {
     "async": "^2.6.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zzfoo/excel-config-parser.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zzfoo/excel-config-parser/issues"
+  },
+  "homepage": "https://github.com/zzfoo/excel-config-parser#readme",
+  "description": ""
 }
