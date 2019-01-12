@@ -131,6 +131,7 @@ function parseArray(worksheet) {
             try {
                 item[key] = parseValue(value, type);
             } catch(e) {
+                console.log(e);
                 console.error('worksheet: ' + worksheet.name + ' row: ' + rowNumber + ' parse failed! ');
                 console.error('key: ' + key + ' , value: ' + value + ' , type: ' + type);
                 throw e;
@@ -142,20 +143,22 @@ function parseArray(worksheet) {
 }
 
 function parseValue(value, type) {
-    if (value.trim) {
+    if (typeof value === 'string') {
         value = value.trim();
     }
     if(value == 'N/A'||value == 'n/a') return undefined;
-    if(value == 'null') return null;
+    if(value === 'null') return null;
     switch(type) {
       case 'int':
+        if (value === null) return undefined;
         return parseInt(value);
       case 'num':
       case 'float':
       case 'number':
+        if (value === null) return undefined;
         return Number(value);
       case 'time':
-        if(!value) return undefined;
+        if (value === null) return undefined;
         var m = /(-?)(?:(\d+)d)?(?:(\d+)h)?(?:(\d+)m)?(?:(\d+\.?\d*)s?)?/i.exec(value);
         var time = 0;
         var nagative = m[1];
@@ -170,7 +173,7 @@ function parseValue(value, type) {
         }
         return (nagative ? -1 : 1) * time;
       case 'bool':
-        if(!value) return undefined;
+        if (value === null) return undefined;
         value = value && value.toLowerCase();
         return value == 'yes' || value == 'true' || value == '是' || value == 'y' || value == '1';
       case 'string':
