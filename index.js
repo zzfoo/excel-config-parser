@@ -38,18 +38,18 @@ function parse(filePath, outputDir, options) {
                 names.forEach(function(name, idx) {
                     jsonData[name] = datas[idx];
                 })
-                render(path.join(outputDir, outputName + '.json'), jsonData);
+                render(path.join(outputDir, outputName + '.json'), jsonData, options);
             } else {
                 names.forEach(function(name, idx) {
                     var jsonData = datas[idx];
-                    render(path.join(outputDir, name + '.json'), jsonData);
+                    render(path.join(outputDir, name + '.json'), jsonData, options);
                 })
             }
         })
     } else {
         parseExcel(filePath, function(err, jsonData) {
             outputName = outputName || path.parse(filePath).name;
-            render(path.join(outputDir, outputName + '.json'), jsonData);
+            render(path.join(outputDir, outputName + '.json'), jsonData, options);
         });
     }
 }

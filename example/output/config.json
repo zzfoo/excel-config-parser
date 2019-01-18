@@ -1,1 +1,48 @@
-{"configMap":{"name":"roy","age":18,"realAge":26.5,"single":true,"workTimePerDay":57600000,"friendNames":["abed","annie","sheldon"]},"configArray":[{"name":"roy","realAge":26.5,"single":true,"friends":["abed","annie","sheldon"]},{"name":"rookie","age":null,"realAge":18.5,"single":false,"friends":["uzi","theshy","faker"]},{"name":"facker","age":21,"realAge":18.5,"single":false,"friends":["uzi","theshy","faker"]}]}
+{
+    "configMap": {
+        "name": "roy",
+        "age": 18,
+        "realAge": 26.5,
+        "single": true,
+        "workTimePerDay": 57600000,
+        "friendNames": [
+            "abed",
+            "annie",
+            "sheldon"
+        ]
+    },
+    "configArray": [
+        {
+            "name": "roy",
+            "realAge": 26.5,
+            "single": true,
+            "friends": [
+                "abed",
+                "annie",
+                "sheldon"
+            ]
+        },
+        {
+            "name": "rookie",
+            "age": null,
+            "realAge": 18.5,
+            "single": false,
+            "friends": [
+                "uzi",
+                "theshy",
+                "faker"
+            ]
+        },
+        {
+            "name": "facker",
+            "age": 21,
+            "realAge": 18.5,
+            "single": false,
+            "friends": [
+                "uzi",
+                "theshy",
+                "faker"
+            ]
+        }
+    ]
+}
