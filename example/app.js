@@ -6,5 +6,6 @@ var parse = require('../index.js');
 //     outputName: 'config',
 // });
 parse(path.resolve(__dirname, './input/'), path.resolve(__dirname, './output/'), {
-    pretty: true
+    pretty: true,
+    startRow: 2,
 });

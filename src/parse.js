@@ -1,5 +1,6 @@
 var exceljs = require('exceljs');
 var async = require('async');
+var config = require('./config');
 
 function parseExcel(filePath, callback) {
     console.log('===================================');
@@ -93,7 +94,9 @@ function parseArray(worksheet) {
     var data = [];
 
     var keys = [];
-    worksheet.getRow(1).eachCell(function(cell, cellNumber) {
+    var options = config.getOptions()
+    var startRow = options.startRow || 1
+    worksheet.getRow(startRow).eachCell(function(cell, cellNumber) {
         var key;
         key = cell.value;
         if (key.trim) {
@@ -106,7 +109,7 @@ function parseArray(worksheet) {
     })
 
     var types = [];
-    worksheet.getRow(2).eachCell(function(cell, cellNumber) {
+    worksheet.getRow(startRow + 1).eachCell(function(cell, cellNumber) {
         var type;
         type = cell.value.trim();
         if (type.trim) {
@@ -120,7 +123,7 @@ function parseArray(worksheet) {
 
     var item;
     worksheet.eachRow(function(row, rowNumber) {
-        if (rowNumber <= 2) {
+        if (rowNumber <= startRow + 1) {
             return;
         }
 

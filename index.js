@@ -3,12 +3,21 @@ var path = require('path');
 var parseExcel = require('./src/parse.js').parseExcel;
 var parseExcels = require('./src/parse.js').parseExcels;
 var render = require('./src/render.js');
+var config = require('./src/config.js');
 
+// options = {
+//     outputName: '',
+//     pretty: false,
+//     mergeToOne: false,
+//     startRow: 1, (1-based)
+// }
 function parse(filePath, outputDir, options) {
     if (!fs.existsSync(filePath)) {
         throw new Error('file: ' + filePath + ' not found');
     }
-    options = options || {};
+    // options = options || {};
+    config.setOptions(options)
+    options = config.getOptions()
     if (isDirectory(filePath)) {
         var names = [];
         if (!outputDir) {
@@ -38,18 +47,18 @@ function parse(filePath, outputDir, options) {
                 names.forEach(function(name, idx) {
                     jsonData[name] = datas[idx];
                 })
-                render(path.join(outputDir, outputName + '.json'), jsonData, options);
+                render(path.join(outputDir, outputName + '.json'), jsonData);
             } else {
                 names.forEach(function(name, idx) {
                     var jsonData = datas[idx];
-                    render(path.join(outputDir, name + '.json'), jsonData, options);
+                    render(path.join(outputDir, name + '.json'), jsonData);
                 })
             }
         })
     } else {
         parseExcel(filePath, function(err, jsonData) {
             outputName = outputName || path.parse(filePath).name;
-            render(path.join(outputDir, outputName + '.json'), jsonData, options);
+            render(path.join(outputDir, outputName + '.json'), jsonData);
         });
     }
 }
