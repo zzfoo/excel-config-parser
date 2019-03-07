@@ -24,7 +24,7 @@
         },
         {
             "name": "rookie",
-            "age": null,
+            "age": "null",
             "realAge": 18.5,
             "single": false,
             "friends": [
@@ -35,7 +35,7 @@
         },
         {
             "name": "facker",
-            "age": 21,
+            "age": "21",
             "realAge": 18.5,
             "single": false,
             "friends": [
