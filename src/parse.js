@@ -73,9 +73,9 @@ function parseMap(worksheet) {
         if (rowNumber <= 1) {
             return;
         }
-        key = row.getCell(1).value;
-        value = row.getCell(2).value;
-        type = row.getCell(3).value;
+        key = row.getCell(1).text;
+        value = row.getCell(2).text;
+        type = row.getCell(3).text;
         if (!key || !type) {
             throw new Error('worksheet: ' + worksheet.name + ' ' + rowNumber + ' key or type is empty!');
         }
@@ -98,23 +98,20 @@ function parseArray(worksheet) {
     var startRow = options.startRow || 1
     worksheet.getRow(startRow).eachCell(function(cell, cellNumber) {
         var key;
-        key = cell.value;
-        if (key.trim) {
-            key = key.trim();
-        }
+        key = cell.text.trim()
         if (!key) {
             throw new Error('worksheet: ' + worksheet.name + ' key is empty!');
         }
         keys.push(key);
     })
 
+    console.log('PARSE_ARRAY: ', keys)
+
     var types = [];
     worksheet.getRow(startRow + 1).eachCell(function(cell, cellNumber) {
         var type;
-        type = cell.value.trim();
-        if (type.trim) {
-            type = type.trim();
-        }
+        type = cell.text.trim();
+
         if (!type) {
             throw new Error('worksheet: ' + worksheet.name + ' type is empty!');
         }
@@ -130,7 +127,7 @@ function parseArray(worksheet) {
         item = {};
         keys.forEach(function(key, keyIndex) {
             var type = types[keyIndex];
-            var value = row.getCell(keyIndex + 1).value;
+            var value = row.getCell(keyIndex + 1).text;
             try {
                 item[key] = parseValue(value, type);
             } catch(e) {
@@ -146,7 +143,7 @@ function parseArray(worksheet) {
 }
 
 function parseValue(value, type) {
-    if (value === null) {
+    if (value === '') {
         return undefined
     }
     if (typeof value === 'number') {

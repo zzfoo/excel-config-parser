@@ -1,0 +1,39 @@
+{
+    "dailylogin": [
+        {
+            "id": "1",
+            "loginDay": 1,
+            "rewardType": null
+        },
+        {
+            "id": "2",
+            "loginDay": 2,
+            "rewardType": null
+        },
+        {
+            "id": "3",
+            "loginDay": 3,
+            "rewardType": null
+        },
+        {
+            "id": "4",
+            "loginDay": 4,
+            "rewardType": null
+        },
+        {
+            "id": "5",
+            "loginDay": 4,
+            "rewardType": null
+        },
+        {
+            "id": "6",
+            "loginDay": 5,
+            "rewardType": null
+        },
+        {
+            "id": "7",
+            "loginDay": 5,
+            "rewardType": null
+        }
+    ]
+}
