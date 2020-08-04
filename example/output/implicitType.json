@@ -1,43 +1,36 @@
 {
-    "dailylogin": [
+    "implicitType": [
         {
-            "id": "1",
-            "loginDay": 1,
-            "rewardType": "金币",
-            "param6": 9
-        },
-        {
-            "id": "2",
+            "id": 2,
             "loginDay": 2,
             "rewardType": "晶石",
             "param6": 9
         },
         {
-            "id": "3",
             "loginDay": 3,
             "rewardType": "转生石",
             "param6": 9
         },
         {
-            "id": "4",
+            "id": 4,
             "loginDay": 4,
             "rewardType": "金币",
             "param6": 9
         },
         {
-            "id": "5",
+            "id": 5,
             "loginDay": 4,
             "rewardType": "晶石",
             "param6": 9
         },
         {
-            "id": "6",
+            "id": 6,
             "loginDay": 5,
             "rewardType": "晶石",
             "param6": 9
         },
         {
-            "id": "7",
+            "id": 7,
             "loginDay": 5,
             "rewardType": "转生石",
             "param6": 9
