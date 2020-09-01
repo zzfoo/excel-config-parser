@@ -83,6 +83,7 @@ function parseArray(worksheet) {
     const options = config.getOptions()
     const startRow = options.startRow || 1
     const startCol = options.startCol || 1
+    const invalidRowMark = options.invalidRowMark
     worksheet.getRow(startRow).eachCell(function (cell, cellNumber) {
         if (cellNumber < startCol) return;
         keys[cellNumber] = cell.text.trim();
@@ -114,6 +115,9 @@ function parseArray(worksheet) {
             return;
         }
 
+        if (invalidRowMark && row.getCell(1).text === invalidRowMark) {
+            return
+        }
         const item = {};
         row.eachCell(function (cell, cellNumber) {
             const key = keys[cellNumber];
