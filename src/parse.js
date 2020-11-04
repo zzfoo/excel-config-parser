@@ -60,7 +60,7 @@ function parseMap(worksheet) {
             return;
         }
         key = row.getCell(1).text;
-        value = row.getCell(2).text;
+        value = row.getCell(2).text.trim();
         type = row.getCell(3).text;
         if (!key || !type) {
             throw new Error('worksheet: ' + worksheet.name + ' ' + rowNumber + ' key or type is empty!');
@@ -124,7 +124,7 @@ function parseArray(worksheet) {
             const type = types[cellNumber];
             if (!key || !type) return;
 
-            const value = cell.text;
+            const value = cell.text.trim();
             try {
                 item[key] = parseValue(value, type);
             } catch (e) {
