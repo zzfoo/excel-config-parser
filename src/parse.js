@@ -155,7 +155,7 @@ function parseValue(value, type) {
             return Number(value);
         case 'time':
             const r = /(-?)(?:(\d+)d)?(?:(\d+)h)?(?:(\d+)m)?(?:(\d+\.?\d*)s?)?/i.exec(value);
-            const time = 0;
+            let time = 0;
             const nagative = r[1];
             if (r[2]) {
                 time += parseInt(r[2]) * 24 * 60 * 60 * 1000;
@@ -179,7 +179,7 @@ function parseValue(value, type) {
             if (m) {
                 if (value == '') return [];
                 t = m[1];
-                value = value.replace(/，/g, ',');
+                // value = value.replace(/，/g, ',');
                 return value.split(',').map(function (v) {
                     return parseValue(v, t);
                 });
