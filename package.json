@@ -10,10 +10,9 @@
   },
   "author": "",
   "license": "ISC",
-  "devDependencies": {},
   "dependencies": {
-    "exceljs": "^1.6.3",
-    "async": "^2.6.1"
+    "async": "^3.2.0",
+    "exceljs": "^4.2.1"
   },
   "repository": {
     "type": "git",
