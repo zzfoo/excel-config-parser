@@ -11,7 +11,7 @@ var config = require('./src/config.js');
 //     mergeToOne: false,
 //     startRow: 1, (1-based)
 // }
-function parse(filePath, outputDir, options) {
+function parse(filePath, outputDir, options, callback) {
     if (!fs.existsSync(filePath)) {
         throw new Error('file: ' + filePath + ' not found');
     }
@@ -54,11 +54,15 @@ function parse(filePath, outputDir, options) {
                     render(path.join(outputDir, name + '.json'), jsonData);
                 })
             }
+
+            callback && callback()
         })
     } else {
         parseExcel(filePath, function(err, jsonData) {
             outputName = outputName || path.parse(filePath).name;
             render(path.join(outputDir, outputName + '.json'), jsonData);
+
+             callback && callback()
         });
     }
 }
