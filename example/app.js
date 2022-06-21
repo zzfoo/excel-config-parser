@@ -7,5 +7,9 @@ var parse = require('../index.js');
 // });
 parse(path.resolve(__dirname, './input/'), path.resolve(__dirname, './output/'), {
     pretty: true,
+    mergeToOne: false,
+    outputName: '',
+    sheetAsStandaloneFile: true,
     startRow: 2,
+    invalidRowMark: '#',
 });

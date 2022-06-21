@@ -1,0 +1,12 @@
+{
+    "name": "roy",
+    "age": 18,
+    "realAge": 26.5,
+    "single": true,
+    "workTimePerDay": 57600000,
+    "friendNames": [
+        "abed",
+        "annie",
+        "sheldon"
+    ]
+}

@@ -1,0 +1,34 @@
+[
+    {
+        "name": "roy",
+        "realAge": 26.5,
+        "single": true,
+        "friends": [
+            "abed",
+            "annie",
+            "sheldon"
+        ]
+    },
+    {
+        "name": "rookie",
+        "age": "null",
+        "realAge": 18.5,
+        "single": false,
+        "friends": [
+            "uzi",
+            "theshy",
+            "faker"
+        ]
+    },
+    {
+        "name": "facker",
+        "age": "21",
+        "realAge": 18.5,
+        "single": false,
+        "friends": [
+            "uzi",
+            "theshy",
+            "faker"
+        ]
+    }
+]

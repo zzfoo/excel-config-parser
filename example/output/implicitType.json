@@ -1,51 +1,49 @@
-{
-    "implicitType": [
-        {
-            "id": 1,
-            "loginDay": 1,
-            "rewardType": "金币",
-            "param1": [
-                "{0}和{1}擦肩而过，彼此打了个招呼",
-                "{0}和{1}在仲夏的凉亭相遇了",
-                "闲逛的{0}和{1}在农田边碰到了",
-                "{0}和{1}在街头说着客套话"
-            ],
-            "param6": 9
-        },
-        {
-            "id": 2,
-            "loginDay": 2,
-            "rewardType": "晶石",
-            "param6": 9
-        },
-        {
-            "loginDay": 3,
-            "rewardType": "转生石",
-            "param6": 9
-        },
-        {
-            "id": 4,
-            "loginDay": 4,
-            "rewardType": "金币",
-            "param6": 9
-        },
-        {
-            "id": 5,
-            "loginDay": 4,
-            "rewardType": "晶石",
-            "param6": 9
-        },
-        {
-            "id": 6,
-            "loginDay": 5,
-            "rewardType": "晶石",
-            "param6": 9
-        },
-        {
-            "id": 7,
-            "loginDay": 5,
-            "rewardType": "转生石",
-            "param6": 9
-        }
-    ]
-}
+[
+    {
+        "id": 1,
+        "loginDay": 1,
+        "rewardType": "金币",
+        "param1": [
+            "{0}和{1}擦肩而过，彼此打了个招呼",
+            "{0}和{1}在仲夏的凉亭相遇了",
+            "闲逛的{0}和{1}在农田边碰到了",
+            "{0}和{1}在街头说着客套话"
+        ],
+        "param6": 9
+    },
+    {
+        "id": 2,
+        "loginDay": 2,
+        "rewardType": "晶石",
+        "param6": 9
+    },
+    {
+        "loginDay": 3,
+        "rewardType": "转生石",
+        "param6": 9
+    },
+    {
+        "id": 4,
+        "loginDay": 4,
+        "rewardType": "金币",
+        "param6": 9
+    },
+    {
+        "id": 5,
+        "loginDay": 4,
+        "rewardType": "晶石",
+        "param6": 9
+    },
+    {
+        "id": 6,
+        "loginDay": 5,
+        "rewardType": "晶石",
+        "param6": 9
+    },
+    {
+        "id": 7,
+        "loginDay": 5,
+        "rewardType": "转生石",
+        "param6": 9
+    }
+]

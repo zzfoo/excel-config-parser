@@ -30,6 +30,7 @@ function parseExcel(filePath, callback) {
             callback(null, data);
         })
         .catch(function (e) {
+            console.log(e)
             callback(e);
         })
 }
